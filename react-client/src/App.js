@@ -8,12 +8,14 @@ class Root extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            CurrentQuestion: props.AllQuestions.head
+            CurrentQuestion: props.AllQuestions.head,
+            finalScore: null
         }
 
         this.handleAnswerClick = this.handleAnswerClick.bind(this);
         this.getPrevConfig = this.props.getPrevConfig.bind(this);
         this.getNextConfig = this.props.getNextConfig.bind(this);
+        this.calcResult = this.props.calcResult.bind(this);
     }
 
     handleAnswerClick (answerId) {
@@ -24,7 +26,6 @@ class Root extends React.Component {
     }
 
     render () {
-        console.info(this);
         return (
             <AppWrapper
                 content={<SingleQuestion
@@ -37,6 +38,7 @@ class Root extends React.Component {
                 />}
                 Next={this.getNextConfig()}
                 Prev={this.getPrevConfig()}
+                finalScore={this.state.finalScore}
             />
         );
     }

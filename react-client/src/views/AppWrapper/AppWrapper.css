@@ -15,6 +15,20 @@
     padding: 1%;
 }
 
+#AppWrapper #final-score-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#final-score-container #final-score-div {
+    padding: 3%;
+    background-color: yellow;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 2em;
+}
+
 #AppWrapper #controllers {
     background-color: #fff;
     width: 95%;

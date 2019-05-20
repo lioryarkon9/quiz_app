@@ -8,6 +8,12 @@ const AppWrapper = props => (
             {props.content}
         </div>
 
+        <div id='final-score-container'>
+            <div id='final-score-div'>
+                {props.finalScore !== null ? props.finalScore : ''}
+            </div>
+        </div>
+
         <div id='controllers'>
             <div className='btn-container'>
                 <div 
@@ -42,7 +48,8 @@ AppWrapper.defaultProps = {
         handlePrevClick: e => console.info('default  handlePrevClick fired'),
         label: 'Prev',
         isDisabled: false
-    }
+    },
+    finalScore: null
 }
 
 export default AppWrapper;

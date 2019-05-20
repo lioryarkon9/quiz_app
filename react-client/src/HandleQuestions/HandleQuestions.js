@@ -1,5 +1,6 @@
 import React from 'react';
 import questions from '../resources/questions.json';
+import {getItemScore} from '../utils';
 
 const WithHandling = App => {
     return class HandleQuestions extends React.Component {
@@ -57,7 +58,10 @@ const WithHandling = App => {
             switch (isNextQuestion) {
                 case null:
                     return {
-                        handleNextClick: e => console.warn('done: no handler'),
+                        handleNextClick: e => {
+                            console.info('done: calling calcResult');
+                            this.setState({finalScore: this.calcResult(currentQuestion)});
+                        },
                         label: 'Done'
                     };
                 default: 
@@ -92,6 +96,20 @@ const WithHandling = App => {
             }
         }
 
+        calcResult (finalItem) {
+            const NUM_ITEMS = questions.length, SUM_TO = 100;
+            const SINGLE_QUESTION_SCORE = SUM_TO / NUM_ITEMS; // 100 / 4 = 25
+            let score = 0;
+            let currentItem = finalItem;
+            while (currentItem.Prev) {
+                score += getItemScore(currentItem, SINGLE_QUESTION_SCORE);
+                currentItem = currentItem.Prev;
+            }
+            score += getItemScore(currentItem, SINGLE_QUESTION_SCORE); // handle initial item
+            
+            return score;
+        }
+
         render () {
             return (
                 <App 
@@ -99,6 +117,7 @@ const WithHandling = App => {
                     AllQuestions={this.state.AllQuestions}
                     getPrevConfig={this.getPrevConfig}
                     getNextConfig={this.getNextConfig}
+                    calcResult={this.calcResult}
                 />
             );
         }
