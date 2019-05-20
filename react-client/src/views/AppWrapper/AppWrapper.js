@@ -11,18 +11,19 @@ const AppWrapper = props => (
         <div id='controllers'>
             <div className='btn-container'>
                 <div 
-                    className='btn'
-                    onClick={props.handlePrevClick}
+                    className={props.Prev.isDisabled ? 'btn btn-disabled' : 'btn'}
+                    onClick={props.Prev.handlePrevClick}
                 >
-                    <span>{props.labelPrev}</span>
+                    <span>{props.Prev.label}</span>
                 </div>
             </div>
+            
             <div className='btn-container'>
                 <div 
                     className='btn'
-                    onClick={props.handleNextClick}
+                    onClick={props.Next.handleNextClick}
                 >
-                    <span>{props.labelNext}</span>
+                    <span>{props.Next.label}</span>
                 </div>
             </div>
         </div>
@@ -33,10 +34,15 @@ const AppWrapper = props => (
 
 AppWrapper.defaultProps = {
     content: <div>defaultContent</div>,
-    handlePrevClick: e => console.info('default  handlePrevClick fired'),
-    handleNextClick: e => console.info('default  handleNextClick fired'),
-    labelNext: 'Next',
-    labelPrev: 'Prev'
+    Next: {
+        handleNextClick: e => console.info('default  handleNextClick fired'),
+        label: 'Next'
+    },
+    Prev: {
+        handlePrevClick: e => console.info('default  handlePrevClick fired'),
+        label: 'Prev',
+        isDisabled: false
+    }
 }
 
 export default AppWrapper;
