@@ -24,6 +24,8 @@ const WithHandling = App => {
                     let currentItem = questionsList[i];
                     // adding neccessary Prev and Next properties for linkedList item 
                     currentItem = this.addNextAndPrev(currentItem);
+                    // adding a property to save user's answer - null at first
+                    currentItem = this.addUserReaction(currentItem);
                     let tmp = prevState.AllQuestions.head;
                     if (tmp) {
                         tmp.Prev = currentItem;
@@ -40,6 +42,12 @@ const WithHandling = App => {
             item.Next = null;
             item.Prev = null;
             
+            return item;
+        }
+
+        addUserReaction (item) {
+            item.UserReaction = null
+
             return item;
         }
 
