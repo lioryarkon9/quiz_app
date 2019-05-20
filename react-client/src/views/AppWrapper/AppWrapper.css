@@ -1,0 +1,41 @@
+#AppWrapper {
+    background-color: #cac1c1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#AppWrapper #content-container {
+    background-color: #fff;
+    width: 95%;
+    border-radius: 5px;
+    min-height: 40vh;
+    padding: 1%;
+}
+
+#AppWrapper #controllers {
+    background-color: #fff;
+    width: 95%;
+    border-radius: 5px;
+    height: 10vh;
+    padding: 1%;
+    display: flex;
+}
+
+#controllers .btn-container {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#controllers .btn {
+    border: 1px solid;
+    width: 15vw;
+    height: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

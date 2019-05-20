@@ -1,0 +1,46 @@
+[
+    {
+        "id": "1",
+        "value": "Which city is the capital of England?",
+        "correctAnswer": {"id": "4", "value": "London"},
+        "options": [
+            {"id": "1", "value": "Paris"},
+            {"id": "2", "value": "Moscow"},
+            {"id": "3", "value": "Jerusalem"},
+            {"id": "4", "value": "London"}
+        ]
+    },
+    {
+        "id": "2",
+        "value": "How many states there are in the USA?",
+        "correctAnswer": {"id": "2", "value": "51"},
+        "options": [
+            {"id": "1", "value": "41"},
+            {"id": "2", "value": "51"},
+            {"id": "3", "value": "61"},
+            {"id": "4", "value": "11"}
+        ]
+    },
+    {
+        "id": "3",
+        "value": "Who was the first prime minister of Israel?",
+        "correctAnswer": {"id": "3", "value": "David Ben Gurion"},
+        "options": [
+            {"id": "1", "value": "Moshe Sharet"},
+            {"id": "2", "value": "Michael Jackson"},
+            {"id": "3", "value": "David Ben Gurion"},
+            {"id": "4", "value": "Tommy Hilfiger"}
+        ]
+    },
+    {
+        "id": "4",
+        "value": "Who is Michael Jordan?",
+        "correctAnswer": {"id": "4", "value": "The greatest basketball player ever"},
+        "options": [
+            {"id": "1", "value": "The most famous pop singer of all times"},
+            {"id": "2", "value": "The gretest tennis player of all times"},
+            {"id": "3", "value": "A famous pianist"},
+            {"id": "4", "value": "The greatest basketball player ever"}
+        ]
+    }
+]
