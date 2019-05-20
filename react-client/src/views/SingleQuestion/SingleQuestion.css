@@ -1,0 +1,16 @@
+#SingleQuestion {
+    background-color: chartreuse;
+}
+
+#SingleQuestion #question-zone {
+    font-size: 1.3em;
+}
+
+#SingleQuestion #q-id-span {
+    font-weight: bold;
+}
+
+#SingleQuestion #options-zone {
+    margin-top: 1%;
+    font-size: 1.1em;
+}

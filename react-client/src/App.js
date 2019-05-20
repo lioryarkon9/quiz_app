@@ -1,6 +1,7 @@
 import React from 'react';
 import AppWrapper from './views/AppWrapper';
 import HandleQuestions from './HandleQuestions';
+import SingleQuestion from './views/SingleQuestion';
 
 
 class Root extends React.Component {
@@ -12,6 +13,7 @@ class Root extends React.Component {
 
         this.getNextConfig = this.getNextConfig.bind(this);
         this.getPrevConfig = this.getPrevConfig.bind(this);
+        this.handleAnswerClick = this.handleAnswerClick.bind(this);
     }
 
     getNextConfig () {
@@ -55,10 +57,25 @@ class Root extends React.Component {
         }
     }
 
+    handleAnswerClick (answerId) {
+        this.setState(prevState => {
+            prevState.CurrentQuestion.UserReaction = answerId;
+            return prevState;
+        });
+    }
+
     render () {
         console.info(this);
         return (
             <AppWrapper
+                content={<SingleQuestion
+                    id={this.state.CurrentQuestion.id}
+                    value={this.state.CurrentQuestion.value}
+                    correctAnswer={this.state.CurrentQuestion.correctAnswer}
+                    options={this.state.CurrentQuestion.options}
+                    UserReaction={this.state.CurrentQuestion.UserReaction}
+                    handleAnswerClick={this.handleAnswerClick}
+                />}
                 Next={this.getNextConfig()}
                 Prev={this.getPrevConfig()}
             />
