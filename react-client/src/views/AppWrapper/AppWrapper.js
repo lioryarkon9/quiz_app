@@ -14,7 +14,7 @@ const AppWrapper = props => (
                     className='btn'
                     onClick={props.handlePrevClick}
                 >
-                    <span>Prev</span>
+                    <span>{props.labelPrev}</span>
                 </div>
             </div>
             <div className='btn-container'>
@@ -22,7 +22,7 @@ const AppWrapper = props => (
                     className='btn'
                     onClick={props.handleNextClick}
                 >
-                    <span>Next</span>
+                    <span>{props.labelNext}</span>
                 </div>
             </div>
         </div>
@@ -34,7 +34,9 @@ const AppWrapper = props => (
 AppWrapper.defaultProps = {
     content: <div>defaultContent</div>,
     handlePrevClick: e => console.info('default  handlePrevClick fired'),
-    handleNextClick: e => console.info('default  handleNextClick fired')
+    handleNextClick: e => console.info('default  handleNextClick fired'),
+    labelNext: 'Next',
+    labelPrev: 'Prev'
 }
 
 export default AppWrapper;
