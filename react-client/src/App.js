@@ -1,25 +1,26 @@
 import React from 'react';
 import AppWrapper from './views/AppWrapper';
-import questions from './resources/questions.json';
+import HandleQuestions from './HandleQuestions';
 
-class QuizApp extends React.Component {
+
+class Root extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
-            AllQuestions: {head: null},
-            CurrentQuestion: null
+            CurrentQuestion: props.AllQuestions.head
         }
     }
 
     render () {
+        console.info(this);
         return (
             <AppWrapper/>
         );
     }
 }
 
-QuizApp.defaultProps = {
-    questionsList: questions
+Root.defaultProps = {
+    AllQuestions: {head: null}
 }
 
-export default QuizApp;
+export default HandleQuestions(Root);
