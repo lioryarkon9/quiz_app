@@ -42,5 +42,16 @@
             {"id": "3", "value": "A famous pianist"},
             {"id": "4", "value": "The greatest basketball player ever"}
         ]
+    },
+    {
+        "id": "5",
+        "value": "Where is the Western Wall?",
+        "correctAnswer": {"id": "3", "value": "Jerusalem"},
+        "options": [
+            {"id": "1", "value": "Amsterdam"},
+            {"id": "2", "value": "Washington"},
+            {"id": "3", "value": "Jerusalem"},
+            {"id": "4", "value": "Moscow"}
+        ]
     }
 ]
