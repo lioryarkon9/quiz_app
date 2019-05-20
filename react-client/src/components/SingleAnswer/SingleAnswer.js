@@ -6,10 +6,10 @@ const SingleAnswer = props => (
         className='SingleAnswer'
         onClick={e => props.handleAnswerClick(props.id)}
     >
-        <div>
+        <div className='wrapper'>
             <span>{props.id}. </span>
             <span
-                className={props.UserReaction === props.id ? 'selected' : ''}
+                className={props.UserReaction === props.id ? 'selected ' : ''}
             >
                 {props.value}
             </span>
